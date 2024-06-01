@@ -35,7 +35,7 @@ namespace DingusThings
                 return;
             }
 
-            int iRarity = 100;
+            int iRarity = 30;
             Item myHeartItem = Bundle.LoadAsset<Item>("Assets/DingusThings/Items/MyHeart.asset");
             // add custom behavior
             MyHeartPhysicsProp myHeartProp = myHeartItem.spawnPrefab.AddComponent<MyHeartPhysicsProp>();
