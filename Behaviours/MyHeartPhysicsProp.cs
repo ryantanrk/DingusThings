@@ -10,9 +10,10 @@ namespace DingusThings.Behaviours
             if (buttonDown)
             {
                 AssetBundle? bundle = DingusThings.Bundle;
+                string itemName = "My Heart";
                 if (bundle == null) 
                 {
-                    DingusThings.Logger.LogError("Sound failed to play.");
+                    DingusThings.Logger.LogError($"{itemName}: Sound failed to play.");
                     return;
                 }
                 AudioClip audioClip = bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/SheSaid.ogg");

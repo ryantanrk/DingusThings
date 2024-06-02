@@ -19,7 +19,7 @@ namespace DingusThings
 
         public static AssetBundle? Bundle;
 
-        public static string PluginString = $"{MyPluginInfo.PLUGIN_GUID} v{MyPluginInfo.PLUGIN_VERSION}";
+        public static string PluginString = $"{MyPluginInfo.PLUGIN_NAME} v{MyPluginInfo.PLUGIN_VERSION}";
 
         private void Awake()
         {
