@@ -25,5 +25,4 @@ Yet another Lethal Company scrap pack
 	</tr>
 </table>
 
-
 Special thanks to Ryokune
