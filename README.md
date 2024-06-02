@@ -25,4 +25,6 @@ Yet another Lethal Company scrap pack
 	</tr>
 </table>
 
+Assets: https://github.com/ryantanrk/DingusThings-Assets
+
 Special thanks to Ryokune
