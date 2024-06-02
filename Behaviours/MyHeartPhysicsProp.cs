@@ -4,7 +4,7 @@ namespace DingusThings.Behaviours
 {
     internal class MyHeartPhysicsProp : PhysicsProp
     {
-        private float cooldown = 1.1f;
+        private readonly float cooldown = 1.1f;
 
         float _lastTriggeredTime;
 

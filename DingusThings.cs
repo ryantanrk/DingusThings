@@ -54,7 +54,7 @@ namespace DingusThings
             /// Steam Gift Card
             int steamGiftRarity = 50;
             Item steamGiftItem = Bundle.LoadAsset<Item>("Assets/DingusThings/Items/SteamGiftCard.asset");
-            steamGiftItem.toolTips = ["Redeem : [ LMB ]"];
+            steamGiftItem.toolTips = ["Zoom : [ Z ]", "Redeem : [ LMB ]"];
             SteamGiftPhysicsProp steamGiftPhysicsProp = steamGiftItem.spawnPrefab.AddComponent<SteamGiftPhysicsProp>();
             steamGiftPhysicsProp.grabbable = true;
             steamGiftPhysicsProp.grabbableToEnemies = true;
