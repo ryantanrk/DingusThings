@@ -1,7 +1,29 @@
 # DingusThings
 
-> a Lethal Company scrap pack
+Yet another Lethal Company scrap pack
 
-Heart model from: https://free3d.com/3d-models/heart
+**This scrap pack currently has:**
 
-Heart voice by Agamgunz
+<table>
+	<tr>
+		<th>
+			Scrap Name
+		</th>
+		<th>
+			Scrap Description
+		</th>
+	</tr>
+	<tr>
+		<td>
+			My Heart
+		</td>
+		<td>
+			Model from: https://free3d.com/3d-models/heart
+			<br/>
+			Voice by Agamgunz
+		</td>
+	</tr>
+</table>
+
+
+Special thanks to Ryokune
