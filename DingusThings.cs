@@ -35,7 +35,8 @@ namespace DingusThings
                 return;
             }
 
-            int iRarity = 30;
+            /// My Heart
+            int myHeartRarity = 30;
             Item myHeartItem = Bundle.LoadAsset<Item>("Assets/DingusThings/Items/MyHeart.asset");
             myHeartItem.toolTips = ["What she said : [ LMB ]"];
             // add custom behavior
@@ -48,7 +49,22 @@ namespace DingusThings
             // register prefab
             NetworkPrefabs.RegisterNetworkPrefab(myHeartItem.spawnPrefab);
             Utilities.FixMixerGroups(myHeartItem.spawnPrefab);
-            Items.RegisterScrap(myHeartItem, iRarity, Levels.LevelTypes.All);
+            Items.RegisterScrap(myHeartItem, myHeartRarity, Levels.LevelTypes.All);
+
+            /// Steam Gift Card
+            int steamGiftRarity = 50;
+            Item steamGiftItem = Bundle.LoadAsset<Item>("Assets/DingusThings/Items/SteamGiftCard.asset");
+            steamGiftItem.toolTips = ["Redeem : [ LMB ]"];
+            SteamGiftPhysicsProp steamGiftPhysicsProp = steamGiftItem.spawnPrefab.AddComponent<SteamGiftPhysicsProp>();
+            steamGiftPhysicsProp.grabbable = true;
+            steamGiftPhysicsProp.grabbableToEnemies = true;
+            steamGiftPhysicsProp.isInFactory = true;
+            steamGiftPhysicsProp.itemProperties = steamGiftItem;
+            
+            // register prefab
+            NetworkPrefabs.RegisterNetworkPrefab(steamGiftItem.spawnPrefab);
+            Utilities.FixMixerGroups(steamGiftItem.spawnPrefab);
+            Items.RegisterScrap(steamGiftItem, steamGiftRarity, Levels.LevelTypes.All);
 
             Logger.LogInfo($"{PluginString} has loaded!");
         }

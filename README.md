@@ -23,6 +23,14 @@ Yet another Lethal Company scrap pack
 			Voice by Agamgunz
 		</td>
 	</tr>
+	<tr>
+		<td>
+			Steam Gift Card
+		</td>
+		<td>
+			Models made by me, sounds and material by Valve
+		</td>
+	</tr>
 </table>
 
 Assets: https://github.com/ryantanrk/DingusThings-Assets
