@@ -37,6 +37,7 @@ namespace DingusThings
 
             int iRarity = 30;
             Item myHeartItem = Bundle.LoadAsset<Item>("Assets/DingusThings/Items/MyHeart.asset");
+            myHeartItem.toolTips = ["What she said : [ LMB ]"];
             // add custom behavior
             MyHeartPhysicsProp myHeartProp = myHeartItem.spawnPrefab.AddComponent<MyHeartPhysicsProp>();
             myHeartProp.grabbable = true;
