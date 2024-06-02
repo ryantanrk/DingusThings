@@ -51,25 +51,5 @@ namespace DingusThings
 
             Logger.LogInfo($"{PluginString} has loaded!");
         }
-
-        internal static void Patch()
-        {
-            Harmony ??= new Harmony(MyPluginInfo.PLUGIN_GUID);
-
-            Logger.LogDebug("Patching...");
-
-            Harmony.PatchAll();
-
-            Logger.LogDebug("Finished patching!");
-        }
-
-        internal static void Unpatch()
-        {
-            Logger.LogDebug("Unpatching...");
-
-            Harmony?.UnpatchSelf();
-
-            Logger.LogDebug("Finished unpatching!");
-        }
     }
 }
