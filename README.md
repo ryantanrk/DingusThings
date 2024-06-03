@@ -31,6 +31,14 @@ Yet another Lethal Company custom scrap pack
 			Model made by me, sounds and images by Valve
 		</td>
 	</tr>
+	<tr>
+		<td>
+			Lifebuoy Bar Soap
+		</td>
+		<td>
+			Model made by me
+		</td>
+	</tr>
 </table>
 
 Assets: https://github.com/ryantanrk/DingusThings-Assets

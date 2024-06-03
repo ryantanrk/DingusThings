@@ -66,6 +66,20 @@ namespace DingusThings
             Utilities.FixMixerGroups(steamGiftItem.spawnPrefab);
             Items.RegisterScrap(steamGiftItem, steamGiftRarity, Levels.LevelTypes.All);
 
+            /// Lifebuoy Bar Soap
+            int lifebuoyBarSoapRarity = 60;
+            Item lifebuoyBarSoapItem = Bundle.LoadAsset<Item>("Assets/DingusThings/Items/LifebuoyBarSoap.asset");
+            PhysicsProp lifebuoyBarSoapItemPhysicsProp = lifebuoyBarSoapItem.spawnPrefab.AddComponent<PhysicsProp>();
+            lifebuoyBarSoapItemPhysicsProp.grabbable = true;
+            lifebuoyBarSoapItemPhysicsProp.grabbableToEnemies = true;
+            lifebuoyBarSoapItemPhysicsProp.isInFactory = true;
+            lifebuoyBarSoapItemPhysicsProp.itemProperties = lifebuoyBarSoapItem;
+
+            // register prefab
+            NetworkPrefabs.RegisterNetworkPrefab(lifebuoyBarSoapItem.spawnPrefab);
+            Utilities.FixMixerGroups(lifebuoyBarSoapItem.spawnPrefab);
+            Items.RegisterScrap(lifebuoyBarSoapItem, lifebuoyBarSoapRarity, Levels.LevelTypes.All);
+
             Logger.LogInfo($"{PluginString} has loaded!");
         }
     }
