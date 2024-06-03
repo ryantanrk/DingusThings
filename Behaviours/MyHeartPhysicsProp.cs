@@ -19,7 +19,7 @@ namespace DingusThings.Behaviours
                 _lastTriggeredTime = Time.time;
                 AssetBundle? bundle = DingusThings.Bundle;
                 string itemName = "My Heart";
-                if (bundle == null) 
+                if (bundle == null)
                 {
                     DingusThings.Logger.LogError($"{itemName}: Sound failed to play.");
                     return;

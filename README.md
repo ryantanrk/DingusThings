@@ -1,8 +1,8 @@
 # DingusThings
 
-Yet another Lethal Company scrap pack
+Yet another Lethal Company custom scrap pack
 
-**This scrap pack currently has:**
+**This scrap pack includes:**
 
 <table>
 	<tr>
@@ -28,7 +28,7 @@ Yet another Lethal Company scrap pack
 			Steam Gift Card
 		</td>
 		<td>
-			Models made by me, sounds and material by Valve
+			Model made by me, sounds and images by Valve
 		</td>
 	</tr>
 </table>
