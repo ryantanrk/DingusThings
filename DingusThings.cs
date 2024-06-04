@@ -1,6 +1,7 @@
 using BepInEx;
 using BepInEx.Logging;
 using DingusThings.Behaviours;
+using DingusThings.Patches;
 using HarmonyLib;
 using LethalLib.Modules;
 using System.IO;
@@ -21,6 +22,25 @@ namespace DingusThings
 
         public static string PluginString = $"{MyPluginInfo.PLUGIN_NAME} v{MyPluginInfo.PLUGIN_VERSION}";
 
+        private static Terminal? terminalInstance;
+
+        public static void SetTerminalInstance(Terminal terminal)
+        {
+            terminalInstance = terminal;
+        }
+
+        public static Terminal? GetTerminalInstance()
+        {
+            if (terminalInstance != null)
+            {
+                return terminalInstance;
+            } 
+            else
+            {
+                return null;
+            }
+        }
+
         private void Awake()
         {
             Logger = base.Logger;
@@ -34,6 +54,10 @@ namespace DingusThings
                 Logger.LogError($"{PluginString}: Failed to load custom assets.");
                 return;
             }
+
+            // load patches
+            Harmony.CreateAndPatchAll(typeof(TerminalPatch));
+            Harmony.CreateAndPatchAll(typeof(SteamGiftPatch));
 
             /// My Heart
             int myHeartRarity = 30;
@@ -54,7 +78,7 @@ namespace DingusThings
             /// Steam Gift Card
             int steamGiftRarity = 50;
             Item steamGiftItem = Bundle.LoadAsset<Item>("Assets/DingusThings/Items/SteamGiftCard.asset");
-            steamGiftItem.toolTips = ["Inspect : [ Z ]", "Redeem : [ LMB ]"];
+            steamGiftItem.toolTips = ["Inspect : [ Z ]"];
             SteamGiftPhysicsProp steamGiftPhysicsProp = steamGiftItem.spawnPrefab.AddComponent<SteamGiftPhysicsProp>();
             steamGiftPhysicsProp.grabbable = true;
             steamGiftPhysicsProp.grabbableToEnemies = true;

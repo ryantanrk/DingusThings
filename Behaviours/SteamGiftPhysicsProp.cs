@@ -1,5 +1,4 @@
-﻿using Unity.Netcode;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DingusThings.Behaviours
 {
@@ -23,9 +22,9 @@ namespace DingusThings.Behaviours
             {
                 AssetBundle? bundle = DingusThings.Bundle;
                 string itemName = "Steam Gift Card";
-                
+
                 // find a terminal
-                Terminal terminal = FindFirstObjectByType<Terminal>();
+                Terminal terminal = DingusThings.GetTerminalInstance();
                 if (terminal != null)
                 {
                     // add scrap value to terminal
