@@ -16,7 +16,7 @@ namespace DingusThings.CustomScriptableObject
                 return;
             }
             /// My Heart
-            int rarity = 50;
+            int rarity = 40;
             Item item = bundle.LoadAsset<Item>("Assets/DingusThings/Items/MyHeart.asset");
             item.toolTips = ["What she said : [ LMB ]"];
             // add custom behavior

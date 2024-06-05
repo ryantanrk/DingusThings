@@ -1,9 +1,4 @@
-﻿using DingusThings.Patches;
-using HarmonyLib;
-using LethalLib.Modules;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using LethalLib.Modules;
 using UnityEngine;
 
 namespace DingusThings.CustomScriptableObject
@@ -20,7 +15,8 @@ namespace DingusThings.CustomScriptableObject
                 return;
             }
             /// Lifebuoy Bar Soap
-            int rarity = 10;
+            // higher value, more likely to spawn
+            int rarity = 100;
             Item item = bundle.LoadAsset<Item>("Assets/DingusThings/Items/LifebuoyBarSoap.asset");
             PhysicsProp lifebuoyBarSoapItemPhysicsProp = item.spawnPrefab.AddComponent<PhysicsProp>();
             lifebuoyBarSoapItemPhysicsProp.grabbable = true;

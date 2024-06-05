@@ -1,5 +1,4 @@
-﻿using DingusThings.Behaviours;
-using HarmonyLib;
+﻿using HarmonyLib;
 
 namespace DingusThings.Patches
 {

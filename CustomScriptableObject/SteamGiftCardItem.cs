@@ -19,7 +19,7 @@ namespace DingusThings.CustomScriptableObject
             }
             /// Steam Gift Card
             Harmony.CreateAndPatchAll(typeof(SteamGiftPatch));
-            int rarity = 30;
+            int rarity = 60;
             Item item = bundle.LoadAsset<Item>("Assets/DingusThings/Items/SteamGiftCard.asset");
             item.toolTips = ["Inspect : [ Z ]"];
             SteamGiftPhysicsProp steamGiftPhysicsProp = item.spawnPrefab.AddComponent<SteamGiftPhysicsProp>();
