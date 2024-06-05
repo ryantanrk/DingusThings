@@ -24,7 +24,7 @@ namespace DingusThings.Behaviours
                 string itemName = "Steam Gift Card";
 
                 // find a terminal
-                Terminal terminal = DingusThings.GetTerminalInstance();
+                Terminal? terminal = DingusThings.GetTerminalInstance();
                 if (terminal != null)
                 {
                     // add scrap value to terminal

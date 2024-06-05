@@ -1,9 +1,8 @@
 using BepInEx;
 using BepInEx.Logging;
-using DingusThings.Behaviours;
+using DingusThings.CustomScriptableObject;
 using DingusThings.Patches;
 using HarmonyLib;
-using LethalLib.Modules;
 using System.IO;
 using System.Reflection;
 using UnityEngine;
@@ -55,55 +54,14 @@ namespace DingusThings
                 return;
             }
 
-            // load patches
+            // load patch
             Harmony.CreateAndPatchAll(typeof(TerminalPatch));
-            Harmony.CreateAndPatchAll(typeof(SteamGiftPatch));
 
-            /// My Heart
-            int myHeartRarity = 30;
-            Item myHeartItem = Bundle.LoadAsset<Item>("Assets/DingusThings/Items/MyHeart.asset");
-            myHeartItem.toolTips = ["What she said : [ LMB ]"];
-            // add custom behavior
-            MyHeartPhysicsProp myHeartProp = myHeartItem.spawnPrefab.AddComponent<MyHeartPhysicsProp>();
-            myHeartProp.grabbable = true;
-            myHeartProp.grabbableToEnemies = true;
-            myHeartProp.isInFactory = true;
-            myHeartProp.itemProperties = myHeartItem;
-
-            // register prefab
-            NetworkPrefabs.RegisterNetworkPrefab(myHeartItem.spawnPrefab);
-            Utilities.FixMixerGroups(myHeartItem.spawnPrefab);
-            Items.RegisterScrap(myHeartItem, myHeartRarity, Levels.LevelTypes.All);
-
-            /// Steam Gift Card
-            int steamGiftRarity = 50;
-            Item steamGiftItem = Bundle.LoadAsset<Item>("Assets/DingusThings/Items/SteamGiftCard.asset");
-            steamGiftItem.toolTips = ["Inspect : [ Z ]"];
-            SteamGiftPhysicsProp steamGiftPhysicsProp = steamGiftItem.spawnPrefab.AddComponent<SteamGiftPhysicsProp>();
-            steamGiftPhysicsProp.grabbable = true;
-            steamGiftPhysicsProp.grabbableToEnemies = true;
-            steamGiftPhysicsProp.isInFactory = true;
-            steamGiftPhysicsProp.itemProperties = steamGiftItem;
+            // register custom scrap
+            MyHeartItem.Register();
+            SteamGiftCardItem.Register();
+            LifebuoyBarSoapItem.Register();
             
-            // register prefab
-            NetworkPrefabs.RegisterNetworkPrefab(steamGiftItem.spawnPrefab);
-            Utilities.FixMixerGroups(steamGiftItem.spawnPrefab);
-            Items.RegisterScrap(steamGiftItem, steamGiftRarity, Levels.LevelTypes.All);
-
-            /// Lifebuoy Bar Soap
-            int lifebuoyBarSoapRarity = 60;
-            Item lifebuoyBarSoapItem = Bundle.LoadAsset<Item>("Assets/DingusThings/Items/LifebuoyBarSoap.asset");
-            PhysicsProp lifebuoyBarSoapItemPhysicsProp = lifebuoyBarSoapItem.spawnPrefab.AddComponent<PhysicsProp>();
-            lifebuoyBarSoapItemPhysicsProp.grabbable = true;
-            lifebuoyBarSoapItemPhysicsProp.grabbableToEnemies = true;
-            lifebuoyBarSoapItemPhysicsProp.isInFactory = true;
-            lifebuoyBarSoapItemPhysicsProp.itemProperties = lifebuoyBarSoapItem;
-
-            // register prefab
-            NetworkPrefabs.RegisterNetworkPrefab(lifebuoyBarSoapItem.spawnPrefab);
-            Utilities.FixMixerGroups(lifebuoyBarSoapItem.spawnPrefab);
-            Items.RegisterScrap(lifebuoyBarSoapItem, lifebuoyBarSoapRarity, Levels.LevelTypes.All);
-
             Logger.LogInfo($"{PluginString} has loaded!");
         }
     }
