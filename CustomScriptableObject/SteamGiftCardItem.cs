@@ -19,19 +19,19 @@ namespace DingusThings.CustomScriptableObject
             }
             /// Steam Gift Card
             Harmony.CreateAndPatchAll(typeof(SteamGiftPatch));
-            int steamGiftRarity = 50;
-            Item steamGiftItem = bundle.LoadAsset<Item>("Assets/DingusThings/Items/SteamGiftCard.asset");
-            steamGiftItem.toolTips = ["Inspect : [ Z ]"];
-            SteamGiftPhysicsProp steamGiftPhysicsProp = steamGiftItem.spawnPrefab.AddComponent<SteamGiftPhysicsProp>();
+            int rarity = 30;
+            Item item = bundle.LoadAsset<Item>("Assets/DingusThings/Items/SteamGiftCard.asset");
+            item.toolTips = ["Inspect : [ Z ]"];
+            SteamGiftPhysicsProp steamGiftPhysicsProp = item.spawnPrefab.AddComponent<SteamGiftPhysicsProp>();
             steamGiftPhysicsProp.grabbable = true;
             steamGiftPhysicsProp.grabbableToEnemies = true;
             steamGiftPhysicsProp.isInFactory = true;
-            steamGiftPhysicsProp.itemProperties = steamGiftItem;
+            steamGiftPhysicsProp.itemProperties = item;
 
             // register prefab
-            NetworkPrefabs.RegisterNetworkPrefab(steamGiftItem.spawnPrefab);
-            Utilities.FixMixerGroups(steamGiftItem.spawnPrefab);
-            Items.RegisterScrap(steamGiftItem, steamGiftRarity, Levels.LevelTypes.All);
+            NetworkPrefabs.RegisterNetworkPrefab(item.spawnPrefab);
+            Utilities.FixMixerGroups(item.spawnPrefab);
+            Items.RegisterScrap(item, rarity, Levels.LevelTypes.All);
         }
     }
 }

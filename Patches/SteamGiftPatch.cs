@@ -5,9 +5,9 @@ namespace DingusThings.Patches
 {
     internal class SteamGiftPatch
     {
-        [HarmonyPatch(typeof(GrabbableObject), nameof(GrabbableObject.GrabItem))]
+        [HarmonyPatch(typeof(GrabbableObject), nameof(GrabbableObject.EquipItem))]
         [HarmonyPrefix]
-        public static void GrabbableObject_GrabItem(GrabbableObject __instance)
+        public static void GrabbableObject_EquipItem(GrabbableObject __instance)
         {
             if (__instance.itemProperties.itemName == "Steam Gift Card")
             {

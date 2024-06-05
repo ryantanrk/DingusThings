@@ -20,19 +20,18 @@ namespace DingusThings.CustomScriptableObject
                 return;
             }
             /// Lifebuoy Bar Soap
-            Harmony.CreateAndPatchAll(typeof(LifebuoyBarSoapPatch));
-            int lifebuoyBarSoapRarity = 60;
-            Item lifebuoyBarSoapItem = bundle.LoadAsset<Item>("Assets/DingusThings/Items/LifebuoyBarSoap.asset");
-            PhysicsProp lifebuoyBarSoapItemPhysicsProp = lifebuoyBarSoapItem.spawnPrefab.AddComponent<PhysicsProp>();
+            int rarity = 10;
+            Item item = bundle.LoadAsset<Item>("Assets/DingusThings/Items/LifebuoyBarSoap.asset");
+            PhysicsProp lifebuoyBarSoapItemPhysicsProp = item.spawnPrefab.AddComponent<PhysicsProp>();
             lifebuoyBarSoapItemPhysicsProp.grabbable = true;
             lifebuoyBarSoapItemPhysicsProp.grabbableToEnemies = true;
             lifebuoyBarSoapItemPhysicsProp.isInFactory = true;
-            lifebuoyBarSoapItemPhysicsProp.itemProperties = lifebuoyBarSoapItem;
+            lifebuoyBarSoapItemPhysicsProp.itemProperties = item;
 
             // register prefab
-            NetworkPrefabs.RegisterNetworkPrefab(lifebuoyBarSoapItem.spawnPrefab);
-            Utilities.FixMixerGroups(lifebuoyBarSoapItem.spawnPrefab);
-            Items.RegisterScrap(lifebuoyBarSoapItem, lifebuoyBarSoapRarity, Levels.LevelTypes.All);
+            NetworkPrefabs.RegisterNetworkPrefab(item.spawnPrefab);
+            Utilities.FixMixerGroups(item.spawnPrefab);
+            Items.RegisterScrap(item, rarity, Levels.LevelTypes.All);
         }
     }
 }

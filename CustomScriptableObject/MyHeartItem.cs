@@ -16,20 +16,20 @@ namespace DingusThings.CustomScriptableObject
                 return;
             }
             /// My Heart
-            int myHeartRarity = 30;
-            Item myHeartItem = bundle.LoadAsset<Item>("Assets/DingusThings/Items/MyHeart.asset");
-            myHeartItem.toolTips = ["What she said : [ LMB ]"];
+            int rarity = 50;
+            Item item = bundle.LoadAsset<Item>("Assets/DingusThings/Items/MyHeart.asset");
+            item.toolTips = ["What she said : [ LMB ]"];
             // add custom behavior
-            MyHeartPhysicsProp myHeartProp = myHeartItem.spawnPrefab.AddComponent<MyHeartPhysicsProp>();
+            MyHeartPhysicsProp myHeartProp = item.spawnPrefab.AddComponent<MyHeartPhysicsProp>();
             myHeartProp.grabbable = true;
             myHeartProp.grabbableToEnemies = true;
             myHeartProp.isInFactory = true;
-            myHeartProp.itemProperties = myHeartItem;
+            myHeartProp.itemProperties = item;
 
             // register prefab
-            NetworkPrefabs.RegisterNetworkPrefab(myHeartItem.spawnPrefab);
-            Utilities.FixMixerGroups(myHeartItem.spawnPrefab);
-            Items.RegisterScrap(myHeartItem, myHeartRarity, Levels.LevelTypes.All);
+            NetworkPrefabs.RegisterNetworkPrefab(item.spawnPrefab);
+            Utilities.FixMixerGroups(item.spawnPrefab);
+            Items.RegisterScrap(item, rarity, Levels.LevelTypes.All);
         }
     }
 }
