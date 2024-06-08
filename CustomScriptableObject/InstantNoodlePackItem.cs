@@ -32,7 +32,7 @@ namespace DingusThings.CustomScriptableObject
             indomiePhysicsProp.grabbable = true;
             indomiePhysicsProp.grabbableToEnemies = true;
             indomiePhysicsProp.isInFactory = true;
-            indomiePhysicsProp.itemProperties = maggiItem;
+            indomiePhysicsProp.itemProperties = indomieItem;
 
             // register scrap
             NetworkPrefabs.RegisterNetworkPrefab(indomieItem.spawnPrefab);
