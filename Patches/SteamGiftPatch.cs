@@ -10,8 +10,11 @@ namespace DingusThings.Patches
         {
             if (__instance.itemProperties.itemName == "Steam Gift Card")
             {
-                // change tooltip on grab
-                HUDManager.Instance.ChangeControlTip(2, __instance.scrapValue <= 0 ? "ALREADY REDEEMED" : "Redeem : [ LMB ]");
+                if (__instance.IsOwner)
+                {
+                    // change tooltip on grab
+                    HUDManager.Instance.ChangeControlTip(2, __instance.scrapValue <= 0 ? "ALREADY REDEEMED" : "Redeem: [LMB]");
+                }
             }
         }
     }

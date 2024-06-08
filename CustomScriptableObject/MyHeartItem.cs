@@ -18,7 +18,7 @@ namespace DingusThings.CustomScriptableObject
             /// My Heart
             int rarity = 40;
             Item item = bundle.LoadAsset<Item>("Assets/DingusThings/Items/MyHeart.asset");
-            item.toolTips = ["What she said : [ LMB ]"];
+            item.toolTips = ["What she said: [LMB]"];
             // add custom behavior
             MyHeartPhysicsProp myHeartProp = item.spawnPrefab.AddComponent<MyHeartPhysicsProp>();
             myHeartProp.grabbable = true;

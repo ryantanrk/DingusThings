@@ -8,7 +8,7 @@ namespace DingusThings.Behaviours
         {
             if (base.IsOwner)
             {
-                HUDManager.Instance.ChangeControlTip(2, scrapValue <= 0 ? "ALREADY REDEEMED" : "Redeem : [ LMB ]");
+                HUDManager.Instance.ChangeControlTip(2, scrapValue <= 0 ? "ALREADY REDEEMED" : "Redeem: [LMB]");
             }
         }
 
