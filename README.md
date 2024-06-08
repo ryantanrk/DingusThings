@@ -39,6 +39,22 @@ Yet another Lethal Company custom scrap pack
 			Model made by me
 		</td>
 	</tr>
+	<tr>
+		<td>
+			Maggi Instant Noodle pack
+		</td>
+		<td>
+			Model made by me
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Indomie Instant Noodle pack
+		</td>
+		<td>
+			Model made by me
+		</td>
+	</tr>
 </table>
 
 Assets: https://github.com/ryantanrk/DingusThings-Assets

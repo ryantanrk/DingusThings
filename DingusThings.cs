@@ -61,7 +61,7 @@ namespace DingusThings
             MyHeartItem.Register();
             SteamGiftCardItem.Register();
             LifebuoyBarSoapItem.Register();
-            MaggiInstantNoodlePackItem.Register();
+            InstantNoodlePackItem.Register();
             
             Logger.LogInfo($"{PluginString} has loaded!");
         }
