@@ -19,7 +19,7 @@ Yet another Lethal Company custom scrap pack
 		</td>
 		<td>
 			Model from: https://free3d.com/3d-models/heart
-			<br/>
+			<br/><br/>
 			Voice by Agamgunz
 		</td>
 	</tr>
@@ -53,6 +53,16 @@ Yet another Lethal Company custom scrap pack
 		</td>
 		<td>
 			Model made by me
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Keyboard (TKL)
+		</td>
+		<td>
+			Model made by me
+			<br/><br/>
+			Keyboard sounds by Pinguwow, Mika, Lunalc3, Agamgunz, and me
 		</td>
 	</tr>
 </table>

@@ -62,6 +62,7 @@ namespace DingusThings
             SteamGiftCardItem.Register();
             LifebuoyBarSoapItem.Register();
             InstantNoodlePackItem.Register();
+            KeyboardItem.Register();
             
             Logger.LogInfo($"{PluginString} has loaded!");
         }
