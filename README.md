@@ -62,7 +62,7 @@ Yet another Lethal Company custom scrap pack
 		<td>
 			Model made by me
 			<br/><br/>
-			Keyboard sounds by Pinguwow, Mika, Lunalc3, Agamgunz, and me
+			Keyboard sounds by Pinguwow, Mikacchi, Lunalc3, Agamgunz, Kayeo, and me
 		</td>
 	</tr>
 </table>

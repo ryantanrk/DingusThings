@@ -30,7 +30,8 @@ namespace DingusThings.Behaviours
                     bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/ryan keyboard.ogg"),
                     bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/agam keyboard.ogg"),
                     bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/pingu keyboard.ogg"),
-                    bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/luna keyboard.ogg")
+                    bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/luna keyboard.ogg"),
+                    bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/kayeo keyboard.ogg")
                 ];
                 int randomIndex = Random.Range(0, clips.Length);
                 AudioSource audioSource = GetComponent<AudioSource>();
