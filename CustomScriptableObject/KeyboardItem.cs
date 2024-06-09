@@ -17,6 +17,7 @@ namespace DingusThings.CustomScriptableObject
 
             int rarity = 30;
             Item item = bundle.LoadAsset<Item>("Assets/DingusThings/Items/Keyboard.asset");
+            item.toolTips = ["Type: [LMB]"];
             KeyboardPhysicsProp physicsProp = item.spawnPrefab.AddComponent<KeyboardPhysicsProp>();
             physicsProp.grabbable = true;
             physicsProp.grabbableToEnemies = true;
