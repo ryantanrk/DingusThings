@@ -8,6 +8,15 @@ namespace DingusThings.Behaviours
 
         float _lastTriggeredTime;
 
+        private System.Random? randomizer;
+
+        public override void Start()
+        {
+            base.Start();
+            int seed = StartOfRound.Instance.randomMapSeed + StartOfRound.Instance.currentLevelID + itemProperties.itemId;
+            randomizer = new System.Random(seed);
+        }
+
         public override void ItemActivate(bool used, bool buttonDown = true)
         {
             // if still under cooldown do not activate
@@ -26,14 +35,20 @@ namespace DingusThings.Behaviours
                     return;
                 }
                 AudioClip[] clips = [
-                    bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/mika keyboard.ogg"),
                     bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/ryan keyboard.ogg"),
-                    bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/agam keyboard.ogg"),
                     bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/pingu keyboard.ogg"),
-                    bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/luna keyboard.ogg"),
-                    bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/kayeo keyboard.ogg")
+                    bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/mika keyboard.ogg"),
+                    bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/kayeo keyboard.ogg"),
+                    bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/agam keyboard.ogg"),
+                    bundle.LoadAsset<AudioClip>("Assets/DingusThings/Sounds/luna keyboard.ogg")
                 ];
-                int randomIndex = Random.Range(0, clips.Length);
+
+                int randomIndex = 0;
+                if (randomizer != null)
+                {
+                    randomIndex = randomizer.Next(clips.Length);
+                }
+                
                 AudioSource audioSource = GetComponent<AudioSource>();
                 audioSource.PlayOneShot(clips[randomIndex], 1F);
             }
