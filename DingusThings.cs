@@ -1,5 +1,6 @@
 using BepInEx;
 using BepInEx.Logging;
+using DingusThings.Behaviours;
 using DingusThings.CustomScriptableObject;
 using DingusThings.Patches;
 using HarmonyLib;
@@ -23,10 +24,7 @@ namespace DingusThings
 
         private static Terminal? terminalInstance;
 
-        public static void SetTerminalInstance(Terminal terminal)
-        {
-            terminalInstance = terminal;
-        }
+        private static int randomMapSeed = 0;
 
         public static Terminal? GetTerminalInstance()
         {
@@ -38,6 +36,23 @@ namespace DingusThings
             {
                 return null;
             }
+        }
+
+        public static void SetTerminalInstance(Terminal terminal)
+        {
+            terminalInstance = terminal;
+        }
+
+        public static int GetRandomMapSeed()
+        {
+            return randomMapSeed;
+        }
+
+        public static void SetRandomMapSeed(int s)
+        {
+            randomMapSeed = s;
+            // update keyboard physics prop seed
+            KeyboardPhysicsProp.OnSeedUpdate();
         }
 
         private void Awake()

@@ -8,12 +8,17 @@ namespace DingusThings.Behaviours
 
         float _lastTriggeredTime;
 
-        private System.Random? randomizer;
+        private static System.Random? randomizer;
+
+        public static void OnSeedUpdate()
+        {
+            randomizer = new System.Random(DingusThings.GetRandomMapSeed());
+        }
 
         public override void Start()
         {
             base.Start();
-            int seed = StartOfRound.Instance.randomMapSeed + StartOfRound.Instance.currentLevelID + itemProperties.itemId;
+            int seed = itemProperties.itemId;
             randomizer = new System.Random(seed);
         }
 
