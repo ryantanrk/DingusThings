@@ -8,10 +8,11 @@ namespace DingusThings.CustomScriptableObject
     {
         public static void Register()
         {
+            string itemName = "Keyboard";
             AssetBundle? bundle = DingusThings.Bundle;
             if (bundle == null)
             {
-                DingusThings.Logger.LogError("Instant noodle packs failed to load.");
+                DingusThings.Logger.LogError(itemName + " failed to load.");
                 return;
             }
 

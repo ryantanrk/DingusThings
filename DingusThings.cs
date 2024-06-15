@@ -71,6 +71,7 @@ namespace DingusThings
 
             // load patch
             Harmony.CreateAndPatchAll(typeof(TerminalPatch));
+            Harmony.CreateAndPatchAll(typeof(SeedPatch));
 
             // register custom scrap
             MyHeartItem.Register();
