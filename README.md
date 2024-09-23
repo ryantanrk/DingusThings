@@ -18,7 +18,7 @@ Yet another Lethal Company custom scrap pack
 			My Heart
 		</td>
 		<td>
-			Model from: https://free3d.com/3d-models/heart
+			Model by me
 			<br/><br/>
 			Voice by Agamgunz
 		</td>
