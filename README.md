@@ -28,7 +28,9 @@ Yet another Lethal Company custom scrap pack
 			Steam Gift Card
 		</td>
 		<td>
-			Model made by me, sounds and images by Valve
+			Model made by me
+			<br/><br/>
+			Sounds and images by Valve
 		</td>
 	</tr>
 	<tr>
@@ -63,6 +65,16 @@ Yet another Lethal Company custom scrap pack
 			Model made by me
 			<br/><br/>
 			Keyboard sounds by Pinguwow, Mikacchi, LunaIc3, Agamgunz, Kayeo, and me
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Nerd
+		</td>
+		<td>
+			Model made by me
+			<br/><br/>
+			Voice by Richietxy
 		</td>
 	</tr>
 </table>

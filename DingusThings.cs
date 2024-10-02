@@ -69,7 +69,7 @@ namespace DingusThings
                 return;
             }
 
-            // load patch
+            // load patches
             Harmony.CreateAndPatchAll(typeof(TerminalPatch));
             Harmony.CreateAndPatchAll(typeof(SeedPatch));
 
@@ -79,6 +79,7 @@ namespace DingusThings
             LifebuoyBarSoapItem.Register();
             InstantNoodlePackItem.Register();
             KeyboardItem.Register();
+            NerdItem.Register();
             
             Logger.LogInfo($"{PluginString} has loaded!");
         }
